@@ -1,68 +1,68 @@
 {
-  // 版本号
-  // 用于程序更新检查，请不要手动修改。
+  // Version number
+  // Used for program update checks, do not modify manually.
   "version": "2.6.1",
 
-  // --- 会话设置 ---
-  // 当前 LMArena 页面的会话 ID。
-  // 通过运行 id_updater.py 可以自动更新。
-  "session_id": "eb89f76a-91c9-4a68-89d8-f48783dfea0a",
+  // --- Session Settings ---
+  // Current session ID for the LMArena page.
+  // Can be automatically updated by running id_updater.py.
+  "session_id": "670464fc-4a4c-4f33-a590-17a6d19dc396",
 
-  // 当前会话的最后一条消息 ID。
-  // 通过运行 id_updater.py 可以自动更新。
-  "message_id": "13639031-cf51-4d86-8f31-13fe28c684fb",
+  // Last message ID of the current session.
+  // Can be automatically updated by running id_updater.py.
+  "message_id": "a0885d21-fe72-4af7-adef-c2fd72819293",
 
-  // --- ID 更新器专用配置 ---
-  // id_updater.py 上次使用的模式 ('direct_chat' 或 'battle')
+  // --- ID Updater Specific Configuration ---
+  // Last mode used by id_updater.py ('direct_chat' or 'battle')
   "id_updater_last_mode": "direct_chat",
-  // id_updater.py 在 Battle 模式下，要更新的目标 ('A' 或 'B')
+  // Target to update in Battle mode ('A' or 'B')
   "id_updater_battle_target": "A",
 
-  // --- 更新设置 ---
-  // 开关：自动检查更新
-  // 设置为 true，程序启动时会连接到 GitHub 检查新版本。
+  // --- Update Settings ---
+  // Toggle: Auto-check for updates
+  // Set to true to check GitHub for new versions when the program starts.
   "enable_auto_update": true,
 
-  // --- 功能开关 ---
+  // --- Feature Toggles ---
 
-  // 功能开关：绕过敏感词检测
-  // 在原始用户请求的对话中，额外注入一个内容为空的用户消息，以尝试绕过敏感词审查。
+  // Feature toggle: Bypass sensitive word detection
+  // Injects an additional empty user message into the original user request conversation to attempt bypassing sensitive word checks.
   "bypass_enabled": true,
 
-  // 功能开关：酒馆模式 (Tavern Mode)
-  // 此模式专为需要完整历史记录注入的场景设计（如酒馆AI、SillyTavern等）。
+  // Feature toggle: Tavern Mode
+  // Designed for scenarios requiring full history injection (e.g., Tavern AI, SillyTavern).
   "tavern_mode_enabled": false,
 
-  // --- 模型映射设置 ---
+  // --- Model Mapping Settings ---
 
-  // 开关：当模型映射不存在时，使用默认ID
-  // 如果设置为 true，当请求的模型在 model_endpoint_map.json 中找不到时，
-  // 将会使用 config.jsonc 中定义的全局 session_id 和 message_id。
-  // 如果设置为 false，找不到映射时将返回错误。
+  // Toggle: Use default ID when model mapping is not found
+  // If set to true, when the requested model is not found in model_endpoint_map.json,
+  // the global session_id and message_id defined in config.jsonc will be used.
+  // If set to false, an error will be returned if no mapping is found.
   "use_default_ids_if_mapping_not_found": true,
 
-  // --- 高级设置 ---
+  // --- Advanced Settings ---
 
-  // 流式响应超时时间（秒）
-  // 服务器等待来自浏览器的下一个数据块的最长时间。非流式也使用此值。
-  // 如果您的网络连接较慢或模型响应时间很长，可以适当增加此值。
+  // Stream response timeout (seconds)
+  // Maximum time the server waits for the next data chunk from the browser. Also used for non-streaming.
+  // Increase this value if your network connection is slow or model response time is long.
   "stream_response_timeout_seconds": 360,
 
-  // --- 自动重启设置 ---
+  // --- Auto-Restart Settings ---
 
-  // 开关：启用空闲自动重启
-  // 当服务器在指定时间内（如下所设）没有收到任何 API 请求时，将自动重启。
+  // Toggle: Enable idle auto-restart
+  // Automatically restarts the server if no API requests are received within the specified time below.
   "enable_idle_restart": true,
 
-  // 空闲重启超时时间（秒）
-  // 服务器在“检查与更新完毕”后，若超过此时长未收到任何请求，则会重启。
-  // 5分钟 = 300秒。设置为 -1 可禁用此超时功能（即使上面开关为true）。
+  // Idle restart timeout (seconds)
+  // If no requests are received after "Check and Update Complete" for this duration, the server will restart.
+  // 5 minutes = 300 seconds. Set to -1 to disable this timeout feature (even if the above toggle is true).
   "idle_restart_timeout_seconds": -1,
 
-  // --- 安全设置 ---
+  // --- Security Settings ---
 
   // API Key
-  // 设置一个 API Key 来保护您的服务。
-  // 如果设置了此值，所有到 /v1/chat/completions 的请求都必须在 Authorization 头部中包含正确的 Bearer Token。
+  // Set an API Key to protect your service.
+  // If this value is set, all requests to /v1/chat/completions must include the correct Bearer Token in the Authorization header.
   "api_key": ""
 }
